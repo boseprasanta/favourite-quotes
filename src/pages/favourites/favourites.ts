@@ -1,25 +1,21 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the FavouritesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
+import { Component ,OnInit } from '@angular/core';
+import { SettingsPage } from "../settings/settings";
 @Component({
   selector: 'page-favourites',
   templateUrl: 'favourites.html',
 })
-export class FavouritesPage {
+export class FavouritesPage implements OnInit {
+	quotesPage:any;
+  	settingsPage:any;
+  	constructor(){
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FavouritesPage');
-  }
-
+	    this.settingsPage = SettingsPage;
+	    console.log('Page Called');
+  	}
+  	ngOnInit(){
+  		console.log('Hello World');
+  	}
+  	helloWorld(){
+  		console.log('Hello World 2');
+  	}
 }
