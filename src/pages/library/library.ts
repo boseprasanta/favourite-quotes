@@ -1,14 +1,20 @@
-import { Component , OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Quote } from "../../data/quote.interface";
 import quotes from '../../data/quotes';
-import { Quote } from '../../data/quote.interface';
+import { QuotesPage } from "../quotes/quotes";
+
+
 @Component({
   selector: 'page-library',
-  templateUrl: 'library.html',
+  templateUrl: 'library.html'
 })
 export class LibraryPage implements OnInit {
-	quoteCollection:{ category:string , quotes:Quote[] , icon:string }[];
-	//quoteCollection:{ category:string , quotes:{ id:string,person:string,text:string }[] , icon:string }[];
-	ngOnInit(){
-		this.quoteCollection = quotes;
-	}
+
+	quoteCollection: {category: string, quotes: Quote[], icon: string}[];
+	quotesPage:any ;
+ 
+  	ngOnInit() {
+  		this.quotesPage = QuotesPage;
+    	this.quoteCollection = quotes;
+  	}
 }
